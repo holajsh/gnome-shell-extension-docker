@@ -65,6 +65,8 @@ const DockerSubMenuMenuItem = new Lang.Class({
                 break;
             case "running":
                 this.actor.insert_child_at_index(createIcon('system-run-symbolic', 'status-running'), 1);
+                // Add option to open a bash terminal inside the container
+                this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "exec"));
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "pause"));
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "stop"));
                 break;

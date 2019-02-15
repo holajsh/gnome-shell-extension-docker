@@ -40,15 +40,14 @@ const DockerMenuItem = new Lang.Class({
     },
 
     _dockerAction: function () {
-        Docker.runCommand(this.dockerCommand, this.containerName, (status, command, err) => {
-            if (status === 0) {
+        Docker.runCommand(this.dockerCommand, this.containerName, (res, command) => {
+            if (res) {
                 log("`" + command + "` terminated successfully");
             } else {
                 let errMsg = _("Error occurred when running `" + command + "`");
                 Main.notify(errMsg);
                 log(errMsg);
-                log(err);
             }
         });
-    }
+    },
 });
