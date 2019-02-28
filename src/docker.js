@@ -24,6 +24,7 @@ const Gio = imports.gi.Gio;
 const dockerCommandsToLabels = {
     start: 'Start',
     stop: 'Stop',
+    restart: 'Restart',
     pause: 'Pause',
     unpause: 'Unpause',
     rm: 'Remove',

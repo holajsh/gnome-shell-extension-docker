@@ -68,6 +68,7 @@ const DockerSubMenuMenuItem = new Lang.Class({
                 // Add option to open a bash terminal inside the container
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "exec"));
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "pause"));
+                this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "restart"));
                 this.menu.addMenuItem(new DockerMenuItem.DockerMenuItem(containerName, "stop"));
                 break;
             case "paused":
